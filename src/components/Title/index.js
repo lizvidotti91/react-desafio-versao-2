@@ -2,7 +2,9 @@ import Title from './styles';
 
 function WrapperTitle() {
     return (
-        <Title>Movies</Title>
+        <Title>
+            <a href="/">Movies</a>
+        </Title>
     );
 }
 

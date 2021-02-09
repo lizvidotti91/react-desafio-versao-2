@@ -1,8 +1,10 @@
 import React from 'react';
 
+import MovieInfo from '../MovieInfo';
 import Article from '../Article';
 
 function Films() {
+    const [stateScreen, setStateScreen] = React.useState(null);
     const [lista, setLista] = React.useState({ movies: [] });
     let currentId = null;
     let movies = fetch('https://api.themoviedb.org/3/discover/movie?api_key=b5d0e5fd9722187c8fd22a8cd3b93de7&language=pt-BR&')
@@ -11,10 +13,22 @@ function Films() {
             setLista({ movies: [...lista.results] })
         });
 
+    function viewMovieInfo(id) {
+        const filteredMovie = lista.movies.filter(movie => movie.id === id);
+        const newCurrentMovie = filteredMovie.length > 0 ? filteredMovie[0] : null;
+        setStateScreen(filteredMovie);
+    }
+
+    function closeMovieInfo() {
+        setStateScreen(null);
+    }
+
     return (
         <div>
-            {
+            {stateScreen != null && <MovieInfo closeMovieInfo={closeMovieInfo} currentMovie={setStateScreen} />}
+            {stateScreen === null &&
                 lista.movies.map(movie => {
+                    let id = movie.id;
                     return (
                         <Article key={movie.id}>
                             <Article.Image>
@@ -30,9 +44,7 @@ function Films() {
                                     <h2>{movie.title}</h2>
                                     <a
                                         href="#"
-                                        onClick={() => {
-
-                                        }}
+                                        onClick={() => { viewMovieInfo(id) }}
                                     > Mais</a>
                                 </Article.Title>
                                 <Article.Vote> <p>{movie.vote_average}</p> </Article.Vote>
