@@ -1,5 +1,7 @@
 # Desafio Técnico Web - Banco de Talentos da Cubos
 
+-[Primeira versão do projeto](https://github.com/lizvidotti91/react-desafio-tecnico-web); 
+
 ## Objetivo
 
 * Implementar um web app responsivo que consuma a API do The Movie DB e permita buscar e ver detalhes de filmes de seu catálogo.
