@@ -4,20 +4,25 @@ import Article from "../Article";
 import MovieInfo from '../MovieInfo';
 
 function FilmsSearch({ movieList }) {
+    // Aqui iniciamos o estado da tela como nulo. Ao clicar em exibir mais detalhes, esse estado será alterado, passando a exibir a janela de detalhes
     const [stateScreen, setStateScreen] = React.useState(null);
 
+    // Função para exibir os detalhes do filme
     function viewMovieInfo(id) {
         const filteredMovie = movieList.filter(movie => movie.id === id);
         const newCurrentMovie = filteredMovie.length > 0 ? filteredMovie[0] : null;
-        setStateScreen(filteredMovie);
+        setStateScreen(newCurrentMovie);
     }
-
+    // Função para fechar os detalhes do filme e retornar à tela principal
     function closeMovieInfo() {
         setStateScreen(null);
     }
 
     return (
         <div>
+            {/* Validações:
+            - SE o estado da tela NÃO é nulo, então exiba os detalhes do filme
+            - SE o estado da tela É nulo, então exiba a lista de filmes */}
             {stateScreen != null && <MovieInfo closeMovieInfo={closeMovieInfo} currentMovie={setStateScreen} />}
             {stateScreen === null &&
                 movieList.map((movie) => {

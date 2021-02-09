@@ -1,7 +1,7 @@
 import Article from "../Article";
 
 function MovieInfo({ closeMovieInfo, currentMovie }) {
-    console.log(currentMovie)
+
     return (
         <Article key={0}>
             <Article.Image>
@@ -11,7 +11,7 @@ function MovieInfo({ closeMovieInfo, currentMovie }) {
             </Article.Image>
             <Article.Content>
                 <Article.Title>
-                    <h2>Título do Filme</h2>
+                    <h2>Título do Filme {currentMovie.id} </h2>
                     <a
                         href="#"
                         onClick={() => closeMovieInfo()}

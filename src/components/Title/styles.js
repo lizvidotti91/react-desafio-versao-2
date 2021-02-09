@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+// Estilizações utilizando styled-components
+// Aqui faço a estilização CSS dos componentes, usando o JavaScript
 const Title = styled.nav`
     align-items: center;
     background-color: #457B9D;
     display: flex;
+    font-family: 'Abel', sans-serif;
     font-size: 5vh;
-    font-weight: 100;
     height: 8vh;
     justify-content: center;
     width: 100vw;

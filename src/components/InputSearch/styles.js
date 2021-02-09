@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
+// Estilizações usando o styled-components
+// Estilização CSS utilizando o javascript
+// Meu componente principal é o Container
 const Container = styled.form`
     text-align: center;
 `;
 
+// Para cada elemento filho, utilizado a sintaxe Container.NovoElemento
 Container.Input = styled.input`
     border: none;
     border-radius: 20px;

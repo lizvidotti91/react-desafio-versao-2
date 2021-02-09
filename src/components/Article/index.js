@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+// Estilizações usando o styled-components
+// Estilização CSS utilizando o javascript
+// Meu componente principal é o Article
 const Article = styled.article`
     display: flex;
     height: 150px;
@@ -10,6 +13,7 @@ const Article = styled.article`
     }
 `;
 
+// Para cada elemento filho, utilizado a sintaxe Article.NovoElemento
 Article.Image = styled.div`
     height: 100%;
     img{
@@ -40,18 +44,18 @@ Article.Title = styled.div`
 
     h2{
         color: #A8DADC;
+        font-family: 'Abel', sans-serif;
         font-size: 12px;
-        font-weight: 100;
          @media (min-width: 800px){
             font-size: 24px;
         }
     }
 
     a{
-        background-color: var(--prussian-blue);
+        background-color: #1D3557;
         border: none;
         border-radius: 5px;
-        color: var(--powder-blue);
+        color: #A8DADC;
         cursor: pointer;
         font-size: 8px;
         font-weight: 100;
@@ -102,7 +106,6 @@ Article.Date = styled.div`
     p{
         color: #1D3557;
         font-size: 10px;
-        font-weight: 100;
         text-align: left;
         @media (min-width: 800px){
             font-size: 20px;
@@ -122,7 +125,7 @@ Article.Overview = styled.div`
             padding: 14px;
         }
         @media (min-width: 900px){
-            font-size: 14px;
+            font-size: 16px;
             padding: 14px;
         }
     }
